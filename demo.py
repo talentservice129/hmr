@@ -51,14 +51,14 @@ def visualize(img_path, img, proc_param, joints, verts, cam):
 
     # Render results
     skel_img = vis_util.draw_skeleton(img, joints_orig)
-    rend_img_overlay = renderer(
-        vert_shifted, cam=cam_for_render, img=img, do_alpha=True)
-    rend_img = renderer(
-        vert_shifted, cam=cam_for_render, img_size=img.shape[:2])
-    rend_img_vp1 = renderer.rotated(
-        vert_shifted, 60, cam=cam_for_render, img_size=img.shape[:2])
-    rend_img_vp2 = renderer.rotated(
-        vert_shifted, -60, cam=cam_for_render, img_size=img.shape[:2])
+    # rend_img_overlay = renderer(
+    #     vert_shifted, cam=cam_for_render, img=img, do_alpha=True)
+    # rend_img = renderer(
+    #     vert_shifted, cam=cam_for_render, img_size=img.shape[:2])
+    # rend_img_vp1 = renderer.rotated(
+    #     vert_shifted, 60, cam=cam_for_render, img_size=img.shape[:2])
+    # rend_img_vp2 = renderer.rotated(
+    #     vert_shifted, -60, cam=cam_for_render, img_size=img.shape[:2])
 
     import matplotlib.pyplot as plt
     # plt.ion()
@@ -206,7 +206,7 @@ if __name__ == '__main__':
 
     config.batch_size = 1
 
-    renderer = vis_util.SMPLRenderer(face_path=config.smpl_face_path)
+    # renderer = vis_util.SMPLRenderer(face_path=config.smpl_face_path)
 
     main(config.img_path, config.json_path)
     

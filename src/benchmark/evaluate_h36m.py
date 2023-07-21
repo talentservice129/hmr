@@ -285,8 +285,8 @@ def main(config):
         global renderer
         # Bad impl with global..
         global extreme_errors, contents
-        renderer = vis_util.SMPLRenderer(
-            img_size=config.img_size, face_path=config.smpl_face_path)
+        # renderer = vis_util.SMPLRenderer(
+        #     img_size=config.img_size, face_path=config.smpl_face_path)
 
     all_pairs, actions = get_h36m_seqs(protocol)
 
@@ -378,19 +378,19 @@ def main(config):
         for i in xrange(30):
             bad_ind = sort_inds[i]
             bad_error = extreme_errors[bad_ind]
-            bad_img = draw_content(contents[bad_ind], config)
+            # bad_img = draw_content(contents[bad_ind], config)
             plt.figure(1)
             plt.clf()
-            plt.imshow(bad_img)
+            # plt.imshow(bad_img)
             plt.axis('off')
             plt.title('%d-th worst, mean error %.2fmm' % (i, bad_error))
 
             good_ind = sort_inds[-(i+1)]
             good_error = extreme_errors[good_ind]
-            good_img = draw_content(contents[good_ind], config)
+            # good_img = draw_content(contents[good_ind], config)
             plt.figure(2)
             plt.clf()
-            plt.imshow(good_img)
+            # plt.imshow(good_img)
             plt.axis('off')
             plt.title('%d-th best, mean error %.2fmm' % (i, good_error))
             import ipdb; ipdb.set_trace()

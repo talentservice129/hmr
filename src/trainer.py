@@ -508,10 +508,10 @@ class HMRTrainer(object):
                 zip(imgs, gt_kps, est_verts, joints, cams)):
             # verts, joints, cams are a list of len T.
             all_rend_imgs = []
-            for vert, joint, cam in zip(verts, joints, cams):
-                rend_img = self.visualize_img(img, gt_kp, vert, joint, cam,
-                                              self.renderer)
-                all_rend_imgs.append(rend_img)
+            # for vert, joint, cam in zip(verts, joints, cams):
+            #     rend_img = self.visualize_img(img, gt_kp, vert, joint, cam,
+            #                                   self.renderer)
+            #     all_rend_imgs.append(rend_img)
             combined = np.vstack(all_rend_imgs)
 
             sio = StringIO()
@@ -529,9 +529,9 @@ class HMRTrainer(object):
 
     def train(self):
         # For rendering!
-        self.renderer = vis_util.SMPLRenderer(
-            img_size=self.img_size,
-            face_path=self.config.smpl_face_path)
+        # self.renderer = vis_util.SMPLRenderer(
+            # img_size=self.img_size,
+            # face_path=self.config.smpl_face_path)
 
         step = 0
 
