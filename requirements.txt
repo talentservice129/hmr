@@ -6,6 +6,6 @@ numpy
 matplotlib
 scikit-image
 deepdish>=0.3
-opencv-python
+# opencv-python
 absl-py
 ipdb
